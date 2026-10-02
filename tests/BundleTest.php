@@ -133,7 +133,8 @@ final class TestKernel extends Kernel
         $loader->load(function (ContainerBuilder $container): void {
             $container->loadFromExtension('framework', ['secret' => 'test', 'test' => true, 'http_method_override' => false, 'handle_all_throwables' => true, 'php_errors' => ['log' => true], 'cache' => ['app' => 'cache.adapter.array']]);
             $container->loadFromExtension('twig', ['strict_variables' => true]);
-            $container->loadFromExtension('yatmo', ['key' => 'backend-key', 'frontend_key' => 'frontend-key', 'country' => 'BE', 'language' => 'FR', 'map' => ['mode' => 'map-top', 'zoom' => 15]]);
+            $_SERVER['YATMO_TEST_COUNTRY'] = 'be';   // the recipe wires country to %env(YATMO_COUNTRY)%: the placeholder must survive compilation
+            $container->loadFromExtension('yatmo', ['key' => 'backend-key', 'frontend_key' => 'frontend-key', 'country' => '%env(YATMO_TEST_COUNTRY)%', 'language' => 'FR', 'map' => ['mode' => 'map-top', 'zoom' => 15]]);
             $container->register(TransportInterface::class, FakeTransport::class)->setPublic(true);
         });
     }

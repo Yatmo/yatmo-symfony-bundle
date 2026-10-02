@@ -43,7 +43,7 @@ final class YatmoBundle extends AbstractBundle
         $container->parameters()
             ->set('yatmo.key', $config['key'])
             ->set('yatmo.frontend_key', $config['frontend_key'])
-            ->set('yatmo.country', strtoupper((string) $config['country']))
+            ->set('yatmo.country', (string) $config['country'])   // may be an env placeholder: uppercased at runtime
             ->set('yatmo.language', $config['language'] === null ? null : strtoupper((string) $config['language']))
             ->set('yatmo.cache_days', $config['cache_days'])
             ->set('yatmo.timeout', $config['timeout'])

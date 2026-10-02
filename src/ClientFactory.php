@@ -30,6 +30,6 @@ final class ClientFactory
             $language = preg_replace('/[^A-Z]/', '', $language) ?: 'EN';
         }
 
-        return new Client($this->key, $this->country, $language, $this->transport, $this->timeout);
+        return new Client($this->key, strtoupper($this->country), $language, $this->transport, $this->timeout);
     }
 }

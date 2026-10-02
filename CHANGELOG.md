@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.1
+
+`country` may be an environment placeholder (`%env(YATMO_COUNTRY)%`, as in the Flex recipe): the value is no longer
+uppercased at compile time, which made Symfony report the variable as never used and fail `cache:clear`.
+
 ## 1.0.0
 
 First release: `yatmo:` configuration (keys from `.env`, country, language or request locale, cache), the
