@@ -1,0 +1,47 @@
+{
+    "name": "yatmo/symfony-bundle",
+    "description": "Real estate maps, points of interest and neighbourhood data for Symfony: the Yatmo bundle registers the typed client from .env, caches the neighbourhood text and the nearest places, and adds Twig functions yatmo_map, yatmo_text and yatmo_pois for property pages, indexable by search engines. Symfony 6.4, 7 and 8.",
+    "type": "symfony-bundle",
+    "license": "MIT",
+    "keywords": ["yatmo", "symfony", "symfony-bundle", "twig", "real-estate", "proptech", "map", "poi", "points-of-interest", "neighbourhood", "property", "listing", "isochrone", "seo"],
+    "homepage": "https://yatmo.com",
+    "support": {
+        "docs": "https://documentation.yatmo.com/api",
+        "issues": "https://github.com/Yatmo/yatmo-symfony-bundle/issues",
+        "source": "https://github.com/Yatmo/yatmo-symfony-bundle"
+    },
+    "authors": [
+        { "name": "Yatmo", "email": "support@yatmo.com", "homepage": "https://yatmo.com" }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "psr/cache": "^1.0 || ^2.0 || ^3.0",
+        "symfony/config": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.4 || ^7.0 || ^8.0",
+        "twig/twig": "^3.0",
+        "yatmo/yatmo-php": "^1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5 || ^11.0 || ^12.0",
+        "symfony/cache": "^6.4 || ^7.0 || ^8.0",
+        "symfony/framework-bundle": "^6.4 || ^7.0 || ^8.0",
+        "symfony/twig-bundle": "^6.4 || ^7.0 || ^8.0",
+        "symfony/yaml": "^6.4 || ^7.0 || ^8.0"
+    },
+    "autoload": {
+        "psr-4": { "Yatmo\\SymfonyBundle\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Yatmo\\SymfonyBundle\\Tests\\": "tests/" }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": { "symfony/flex": false }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
